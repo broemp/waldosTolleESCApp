@@ -39,4 +39,9 @@
 			</div>
 		</div>
 	{/if}
+	<!-- {#if !(pb.authStore.model instanceof Admin)}
+		<a href="/act/{data.act.id}/edit">
+			<button class="btn btn-secondary">Bearbeiten</button>
+		</a>
+	{/if} -->
 </div>

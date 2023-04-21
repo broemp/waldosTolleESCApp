@@ -43,6 +43,9 @@
 					? data.acts.find((act) => act.id === selected).drink_name
 					: data.acts[0].drink_name}
 			</p>
+			<a href="/act/{selected ? data.acts.find((act) => act.id === selected).id : data.acts[0].id}">
+				<button class="btn btn-secondary" type="submit">Mehr Infos</button>
+			</a>
 			<div class="divider" />
 			<Rating name="rating_act" label="Bewerte den Auftritt" id="rating_act" required="true" />
 			<div class="divider" />
