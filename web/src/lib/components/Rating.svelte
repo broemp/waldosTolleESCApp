@@ -7,7 +7,7 @@
 	export let required = false;
 </script>
 
-<p class="mt-2  text-xl">{label}</p>
+<p class="mt-2  text-xl underline decoration-green-500 decoration-2">{label}</p>
 <input
 	{label}
 	{name}
@@ -18,7 +18,7 @@
 	type="range"
 	min="0"
 	max="10"
-	class="range"
+	class="range range-primary"
 	step="0.5"
 />
 <div class="w-full flex justify-between text-xs px-2">

@@ -7,9 +7,8 @@
 		Register for an account
 	</h2>
 	<p class="text-center mt-1">
-		Or <a href="/login" class="text-primary font-medium hover:cursor-pointer hover:underline"
-			>sign in</a
-		> if you already have an account.
+		Or <a href="/" class="text-primary font-medium hover:cursor-pointer hover:underline">sign in</a>
+		if you already have an account.
 	</p>
 	<form action="?/register" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
 		<div class="form-control w-full max-w-md">
