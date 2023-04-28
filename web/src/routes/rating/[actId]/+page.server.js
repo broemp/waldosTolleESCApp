@@ -1,8 +1,8 @@
 import { error, redirect } from '@sveltejs/kit'
 import { serializeNonPOJOs } from '$lib/utils.js'
-import { createEventDispatcher } from 'svelte';
+// import { createEventDispatcher } from 'svelte';
 
-const dispatch = createEventDispatcher();
+// const dispatch = createEventDispatcher();
 
 export const load = ({ locals, params }) => {
   if (!locals.pb.authStore.isValid) {
@@ -44,12 +44,12 @@ export const actions = {
       if (record != null) {
         console.log("Updating")
         await locals.pb.collection('ratings').update(formData.get('id'), formData)
-        playToast("Rating updated!")
+        // playToast("Rating updated!")
       } else {
         try {
           console.log("Create")
           await locals.pb.collection('ratings').create(formData)
-          playToast("Rating created!")
+          // playToast("Rating created!")
         } catch (err) {
           console.log(err)
           throw error(err.status, err.message)
@@ -62,8 +62,8 @@ export const actions = {
   }
 }
 
-function playToast(text) {
-  dispatch('message', {
-    text: text,
-  });
-}
+// function playToast(text) {
+//   dispatch('message', {
+//     text: text,
+//   });
+// }
