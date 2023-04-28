@@ -5,22 +5,12 @@
 </script>
 
 <div class="min-h-full">
-	<nav class="navbar bg-base-100 border-b">
-		<div class="flex-1">
-			<a href="/" class="btn btn-ghost normal-case text-xl">
-				<img src="/images/ESC2023.png" alt="Logo" class="object-cover h-12 w-38" /></a
-			>
+	<nav class="navbar bg-base-100 border-b justify-between">
+		<div class="flex">
+			<a href="/"> <img src="/images/ESC2023.png" alt="Logo" class="object-cover h-12 w-38" /></a>
 		</div>
 		<div class="flex-none">
-			{#if !data.user}
-				<div class="dropdown dorpdown-end">
-					<a href="/login" class="btn btn-primary">Login</a>
-					<a href="/register" class="btn btn-secondary">Register</a>
-				</div>
-			{:else}
-				<div class="dropdown dropdown-end mr-4">
-					<a href="/rating/new" class="btn btn-primary btn-outline">Add Rating</a>
-				</div>
+			{#if !!data.user}
 				<div class="dropdown dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<!-- svelte-ignore a11y-label-has-associated-control -->
@@ -37,14 +27,8 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<ul
 						tabindex="0"
-						class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+						class="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-pink-500"
 					>
-						<li>
-							<a href="/my/ratings" class="justify-between">My Ratings</a>
-						</li>
-						<li>
-							<a href="/my/settings">Settings</a>
-						</li>
 						<li>
 							<form action="/logout" method="POST">
 								<button type="submit" class="w-full text-start">Logout</button>

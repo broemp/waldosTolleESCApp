@@ -77,6 +77,12 @@
 			disabled={loading}
 		/>
 		<Input id="username" label="Userame" value={data?.user?.username} disabled={loading} />
+		<div class="inline-block align-middle">
+			<label class="label-tex"
+				>Anime Mode
+				<input id="anime-mode" label="Anime Mode" type="checkbox" class="checkbox" />
+			</label>
+		</div>
 		<div class="w-full max-w-lg pt-3">
 			<button class="btn btn-primary w-full max-w-lg" disabled={loading}> Update Profile </button>
 		</div>

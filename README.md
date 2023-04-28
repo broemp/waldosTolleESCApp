@@ -6,10 +6,11 @@ Then start the backend in the backend folder.
 
 ```bash
 // Clone Repo
-git clone {placeholder}
+git clone https://github.com/broemp/waldosTolleESCApp
 // Start the Backend
 ./backend/pocketbase serve
 // Run the Frontend
+cd web
 npm run dev
 ```
 

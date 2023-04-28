@@ -3,7 +3,7 @@ import { Admin } from 'pocketbase'
 
 export const load = ({ locals }) => {
   if (!locals.pb.authStore.isValid) {
-    throw redirect(303, '/login')
+    throw redirect(303, '/')
   } else if (!(locals.pb.authStore.model instanceof Admin)) {
     throw redirect(303, '/')
   }

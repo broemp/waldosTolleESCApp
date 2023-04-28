@@ -5,16 +5,16 @@
 			<label for="name" class="label font-medium pb-1">
 				<span class="label-text">E-Mail</span>
 			</label>
-			<input type="text" name="email" class="input input-bordered w-full max-w-md" />
+			<input type="text" name="email" class="input input-bordered mx-2" />
 		</div>
 
 		<div class="form-control w-full max-w-md">
 			<label for="password" class="label font-medium pb-1">
 				<span class="label-text">Password</span>
 			</label>
-			<input type="password" name="password" class="input input-bordered w-full max-w-md" />
+			<input type="password" name="password" class="input input-bordered mx-2" />
 		</div>
-		<div class="w-full max-w-md pt-2">
+		<div class="w-5/6 max-w-md pt-2 ">
 			<button type="submit" class="btn btn-primary w-full">Login</button>
 		</div>
 	</form>
