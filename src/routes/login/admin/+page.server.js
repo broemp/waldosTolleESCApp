@@ -9,8 +9,8 @@ export const actions = {
       await locals.pb.admins.authWithPassword(body.email, body.password)
     }
     catch (err) {
-      console.log('Error logging in:', err)
-      throw error(500, 'Da ist was schief gegangen!')
+      console.log('Error:', err)
+      throw error(err.status, err.message)
     }
     throw redirect(303, '/')
   }

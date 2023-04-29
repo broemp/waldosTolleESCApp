@@ -112,6 +112,7 @@ declare module '$env/static/private' {
 	export const WSL2_GUI_APPS_ENABLED: string;
 	export const npm_package_devDependencies__tailwindcss_aspect_ratio: string;
 	export const WSLENV: string;
+	export const npm_package_devDependencies_svelte_french_toast: string;
 	export const INIT_CWD: string;
 	export const NODE_ENV: string;
 }
@@ -229,6 +230,7 @@ declare module '$env/dynamic/private' {
 		WSL2_GUI_APPS_ENABLED: string;
 		npm_package_devDependencies__tailwindcss_aspect_ratio: string;
 		WSLENV: string;
+		npm_package_devDependencies_svelte_french_toast: string;
 		INIT_CWD: string;
 		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;

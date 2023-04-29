@@ -1,5 +1,31 @@
 <script>
+	import { enhance } from '$app/forms';
+	import toast from 'svelte-french-toast';
+
 	export let data;
+	export let isAdmin = data.isAdmin;
+	let loading = false;
+
+	const submitLogin = () => {
+		loading = true;
+		return async ({ result, update }) => {
+			switch (result.type) {
+				case 'success':
+					await update();
+					break;
+				case 'invalid':
+					toast.error('Falsche Einlogg Daten', { position: 'bottom-center' });
+					await update();
+					break;
+				case 'error':
+					toast.error(result.error.message, { position: 'bottom-center' });
+					break;
+				default:
+					await update();
+			}
+			loading = false;
+		};
+	};
 </script>
 
 {#if !data.user}
@@ -11,22 +37,28 @@
 		<form
 			action="?/login"
 			method="POST"
-			class="flex flex-col items-center space-y-2 w-full  py-2 pt-4"
+			class="flex flex-col items-center space-y-2 w-full py-2 pt-4"
+			use:enhance={submitLogin}
 		>
-			<div class="form-control w-full  py-2 max-w-md">
+			<div class="form-control w-full py-2 max-w-md">
 				<label for="name" class="label font-medium pb-1">
 					<span class="label-text">Username</span>
 				</label>
-				<input type="text" name="username" class="input input-bordered mx-2" />
+				<input type="text" name="username" class="input input-bordered mx-2" disabled={loading} />
 			</div>
 
-			<div class="form-control w-full  py-2 max-w-md">
+			<div class="form-control w-full py-2 max-w-md">
 				<label for="password" class="label font-medium pb-1">
 					<span class="label-text">Password</span>
 				</label>
-				<input type="password" name="password" class="input input-bordered mx-2" />
+				<input
+					type="password"
+					name="password"
+					class="input input-bordered mx-2"
+					disabled={loading}
+				/>
 			</div>
-			<button type="submit" class="btn btn-primary w-5/6">Login</button>
+			<button type="submit" class="btn btn-primary w-5/6" disabled={loading}>Login</button>
 		</form>
 	</div>
 	<footer>
@@ -36,20 +68,24 @@
 					href="/login/admin"
 					class="text-primary font-medium hover:cursor-pointer hover:underline"
 				>
-					<button type="button" class="btn btn-secondary w-half mr-4">Registrieren</button>
+					<button type="button" class="btn btn-secondary w-half mr-4" disabled={loading}
+						>Registrieren</button
+					>
 				</a>
 				<a
 					href="/login/admin"
 					class="text-primary font-medium hover:cursor-pointer hover:underline"
 				>
-					<button type="button" class="btn btn-secondary w-half">Admin Login</button>
+					<button type="button" class="btn btn-secondary w-half" disabled={loading}
+						>Admin Login</button
+					>
 				</a>
 			</div>
 		</div>
 	</footer>
 {:else}
 	<div class="flex justify-center">
-		<div class="w-5/6 mt-4 grid grid-cols-1 ">
+		<div class="w-5/6 mt-4 grid grid-cols-1">
 			<h2 class="font-bold text-xl btn btn-primary">
 				WALDO SALDO <svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -68,29 +104,30 @@
 			<div class="mt-8 flex justify-center">
 				<p class="font-bold text-lg">WOHIN MÖCHTEST DU?</p>
 			</div>
-			<button class="btn btn-success w-full my-4 mt-10 ">
-				<div class="font-bold text-lg">
-					<a href="/overview">Running Order</a>
-				</div>
-			</button>
-			<button class="btn btn-success w-full  my-4">
-				<div class="font-bold text-lg">
-					<a href="/my/votes">Meine Votes</a>
-				</div>
-			</button>
-			<button class="btn btn-success w-full  my-4">
-				<div class="font-bold text-lg">
-					<a href="/rating/new">Zum Voting</a>
-				</div>
-				{#if data.user?.admin}
-					<button class="btn btn-success w-full  my-4">
-						<div class="font-bold text-lg">
-							<a href="/admin">Admin</a>
-						</div>
-					</button>
-				{/if}
-			</button>
-			<button class="btn btn-success w-full  my-4">
+			<a href="/overview">
+				<button class="btn btn-success w-full my-4 mt-10">
+					<div class="font-bold text-lg">Running Order</div>
+				</button>
+			</a>
+			<a href="/my/votes">
+				<button class="btn btn-success w-full my-4">
+					<div class="font-bold text-lg">Meine Votes</div>
+				</button>
+			</a>
+			<a href="/rating/new">
+				<button class="btn btn-success w-full my-4">
+					<div class="font-bold text-lg">Zum Voting</div>
+				</button>
+			</a>
+			{#if isAdmin}
+				<button class="btn btn-success w-full my-4">
+					<div class="font-bold text-lg">
+						<a href="/admin">Admin</a>
+					</div>
+				</button>
+			{/if}
+
+			<button class="btn btn-success w-full my-4">
 				<div class="font-bold text-lg">
 					<a href="/my/settings">Settings</a>
 				</div>

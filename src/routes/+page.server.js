@@ -10,7 +10,7 @@ export const actions = {
     }
     catch (err) {
       console.log('Error logging in:', err)
-      throw error(500, 'Da ist was schief gegangen!')
+      throw error(err.status, err.message)
     }
     throw redirect(303, '/')
   }

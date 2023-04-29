@@ -6,8 +6,13 @@
 	<div class="flex flex-col w-full">
 		{#each data.acts as act}
 			<a href="/rating/{act.id}">
-				<div class="card shadow-xl bg-primary m-2 card-compact">
-					<div class="card-body">
+				<div
+					class="card shadow-xl bg-primary m-2 card-compact {act.rating_act
+						? 'bg-success'
+						: 'bg-primary'}
+						"
+				>
+					<div class="card-body {act.rating_act ? 'text-black' : ''}">
 						<h2 class="card-title">
 							{act.act_number}
 							<img
@@ -23,6 +28,11 @@
 							<br />
 							<span class="font-bold">Drink:</span>
 							{act.drink_name}
+							<br />
+							<span class="font-bold">Act Rating:</span>
+							{act.rating_act}
+							<span class="font-bold">Drink Rating:</span>
+							{act.rating_drink}
 						</p>
 					</div>
 				</div>
