@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/rating/[actId]/+page.svelte";
