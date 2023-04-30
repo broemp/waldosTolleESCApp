@@ -57,26 +57,20 @@
 					disabled={loading}
 				/>
 			</div>
-			<button type="submit" class="btn btn-primary w-5/6" disabled={loading}>Login</button>
+			<button type="submit" class="btn btn-secondary w-5/6" disabled={loading}>Login</button>
 		</form>
 	</div>
 	<footer>
-		<div class="sticky flex justify-center content-end pt-4">
-			<div class="">
-				<a href="/register" class="text-primary font-medium hover:cursor-pointer hover:underline">
-					<button type="button" class="btn btn-secondary w-half mr-4" disabled={loading}
-						>Registrieren</button
-					>
-				</a>
-				<a
-					href="/login/admin"
-					class="text-primary font-medium hover:cursor-pointer hover:underline"
-				>
-					<button type="button" class="btn btn-secondary w-half" disabled={loading}
-						>Admin Login</button
-					>
-				</a>
-			</div>
+		<div class="flex justify-center">
+			<a href="/register" class="text-secondary font-medium hover:cursor-pointer hover:underline">
+				<button type="button" class="btn btn-primary m-2" disabled={loading}>Registrieren</button>
+			</a>
+			<a
+				href="/login/admin"
+				class="text-secondary font-medium hover:cursor-pointer hover:underline"
+			>
+				<button type="button" class="btn btn-primary m-2" disabled={loading}>Admin Login</button>
+			</a>
 		</div>
 	</footer>
 {:else}
@@ -101,34 +95,34 @@
 				<p class="font-bold text-lg">WOHIN MÖCHTEST DU?</p>
 			</div>
 			<a href="/overview">
-				<button class="btn btn-success w-full my-4 mt-10">
+				<button class="btn btn-secondary w-full my-4 mt-10">
 					<div class="font-bold text-lg">Running Order</div>
 				</button>
 			</a>
 			<a href="/my/votes">
-				<button class="btn btn-success w-full my-4">
+				<button class="btn btn-secondary w-full my-4">
 					<div class="font-bold text-lg">Meine Votes</div>
 				</button>
 			</a>
 			<a href="/rating/new">
-				<button class="btn btn-success w-full my-4">
+				<button class="btn btn-secondary w-full my-4">
 					<div class="font-bold text-lg">Zum Voting</div>
 				</button>
 			</a>
 			{#if data.isAdmin}
 				<a href="/admin">
-					<button class="btn btn-error w-full my-4">
+					<button class="btn btn-primary w-full my-4">
 						<div class="font-bold text-lg">Admin</div>
 					</button>
 				</a>
 				<a href="/act/new">
-					<button class="btn btn-error w-full my-4">
+					<button class="btn btn-primary w-full my-4">
 						<div class="font-bold text-lg">Add Act</div>
 					</button>
 				</a>
 			{/if}
 			<a href="/my/settings">
-				<button class="btn btn-success w-full my-4">
+				<button class="btn btn-secondary w-full my-4">
 					<div class="font-bold text-lg">Settings</div>
 				</button>
 			</a>

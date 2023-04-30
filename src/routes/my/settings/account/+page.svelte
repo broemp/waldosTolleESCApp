@@ -3,7 +3,6 @@
 	import { enhance, applyAction } from '$app/forms';
 	import { getImageURL } from '$lib/utils';
 
-	export let data;
 	let loading;
 
 	$: loading = false;
@@ -45,8 +44,6 @@
 		use:enhance={{ submitUpdateProfile }}
 	>
 		<h3 class="text-2xl font-medium">Update Profile</h3>
-		<div class="flex pt-4">
-
-		</div>
+		<div class="flex pt-4" />
 	</form>
 </div>

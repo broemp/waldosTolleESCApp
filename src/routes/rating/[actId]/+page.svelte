@@ -65,10 +65,10 @@
 			</div>
 			<div class="flex">
 				<a href="/act/{act.id}">
-					<button class="btn btn-outline btn-success mr-4" type="button">Mehr Infos</button>
+					<button class="btn btn-outline btn-primary mr-4" type="button">Mehr Infos</button>
 				</a>
 				<a href="/overview">
-					<button class="btn btn-outline btn-success" type="button">Overview</button>
+					<button class="btn btn-outline btn-primary" type="button">Overview</button>
 				</a>
 			</div>
 			<div class="divider" />
@@ -88,7 +88,7 @@
 				value={drinkValue}
 			/>
 			<div class="w-full max-w-lg pt-3">
-				<button type="submit" class="btn btn-success w-full max-w-lg"> Abschicken </button>
+				<button type="submit" class="btn btn-primary w-full max-w-lg"> Abschicken </button>
 			</div>
 		</form>
 	</div>

@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    container_name: pocketbase
+    restart: unless-stopped
+    networks:
+      - internal
+    command:
+      - --encryptionEnv #optional
+      - ENCRYPTION #optional
+    environment:
+      ENCRYPTION: secret #optional
+    volumes:
+      - ./data:/pb_data
+      - /public:/pb_public
+    healthcheck:
+      #optional (recommended) since v0.10.0
+      test: wget --no-verbose --tries=1 --spider http://localhost:8090/api/health || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  esc-app:
+    image: broemp/waldos-esc-app
+    container_name: esc-app
+    restart: unless-stopped
+    networks:
+      - internal
+      # - traefik
+    environment:
+      PUBLIC_POCKETBASE_URL: "http://pocketbase:8090"
+    # Traefik Stuff
+    # labels:
+    #   traefik.enable: true
+    #   traefik.http.routers.esc.entryPoints: https
+    #   traefik.http.routers.esc.rule: Host(`domain.com`)
+    #   # traefik.http.routers.esc.middlewares: auth@file
+    #   traefik.http.services.esc.loadbalancer.server.port: 4173
+
+networks:
+  internal:
+    external: false
+
+#   traefik:
+#     external: true

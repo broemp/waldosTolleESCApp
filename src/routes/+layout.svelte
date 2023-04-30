@@ -12,7 +12,7 @@
 			<a href="/"> <img src="/images/ESC2023.png" alt="Logo" class="object-cover h-12 w-38" /></a>
 		</div>
 		<div class="flex-none">
-			{#if !!data.user}
+			{#if data.user}
 				<div class="dropdown dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<!-- svelte-ignore a11y-label-has-associated-control -->
@@ -47,3 +47,11 @@
 		</div>
 	</div>
 </div>
+
+<!-- <style>
+	:global(body) {
+		background-image: url('/images/bg_esc.png');
+		background-attachment: scroll;
+		background-size: auto;
+	}
+</style> -->

@@ -3,8 +3,12 @@ import { serializeNonPOJOs } from '$lib/utils.js'
 import { isAdmin } from '../../../hooks.server.js'
 
 export const load = ({ locals, params }) => {
-  if (!locals.pb.authStore.isValid || isAdmin(locals)) {
+  if (!locals.pb.authStore.isValid) {
     throw redirect(303, '/')
+  }
+
+  if (isAdmin(locals)) {
+    throw redirect(303, '/act/' + params.actId)
   }
 
   const getAct = async () => {

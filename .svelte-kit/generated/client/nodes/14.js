@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/rating/[actId]/+page.svelte";
+export { default as component } from "../../../../src/routes/register/+page.svelte";

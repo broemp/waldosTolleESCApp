@@ -4,7 +4,7 @@
 	// export let data;
 </script>
 
-<div class="flex flex-col w-full h-full p-2 ">
+<div class="flex flex-col w-full h-full p-2">
 	<div class="w-full">
 		<form
 			action="?/create"
@@ -20,7 +20,7 @@
 			<Input id="artist" label="Künstler" />
 			<Input id="song_name" label="Song Name" />
 			<Input id="drink_name" label="Getränk" />
-			<Input id="song_link" label="Youtube Embedded Link" />
+			<Input id="song_link" label="Youtube Link" />
 			<Input id="act_number" label="Auftritt Nummer" />
 			<div class="form-control w-full max-w-lg">
 				<label for="drink_description" class="label font-medium pb-1">
