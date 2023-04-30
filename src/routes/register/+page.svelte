@@ -4,7 +4,7 @@
 
 <div class="flex flex-col items-center h-full w-full">
 	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
-		Register for an account
+		Registrier dich für den Eurovision Song & Drink Contest 2023
 	</h2>
 	<p class="text-center mt-1">
 		Or <a href="/" class="text-primary font-medium hover:cursor-pointer hover:underline">sign in</a>

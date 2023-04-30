@@ -3,7 +3,6 @@
 	import toast from 'svelte-french-toast';
 
 	export let data;
-	export let isAdmin = data.isAdmin;
 	let loading = false;
 
 	const submitLogin = () => {
@@ -64,10 +63,7 @@
 	<footer>
 		<div class="sticky flex justify-center content-end pt-4">
 			<div class="">
-				<a
-					href="/login/admin"
-					class="text-primary font-medium hover:cursor-pointer hover:underline"
-				>
+				<a href="/register" class="text-primary font-medium hover:cursor-pointer hover:underline">
 					<button type="button" class="btn btn-secondary w-half mr-4" disabled={loading}
 						>Registrieren</button
 					>
@@ -119,19 +115,23 @@
 					<div class="font-bold text-lg">Zum Voting</div>
 				</button>
 			</a>
-			{#if isAdmin}
-				<button class="btn btn-success w-full my-4">
-					<div class="font-bold text-lg">
-						<a href="/admin">Admin</a>
-					</div>
-				</button>
+			{#if data.isAdmin}
+				<a href="/admin">
+					<button class="btn btn-error w-full my-4">
+						<div class="font-bold text-lg">Admin</div>
+					</button>
+				</a>
+				<a href="/act/new">
+					<button class="btn btn-error w-full my-4">
+						<div class="font-bold text-lg">Add Act</div>
+					</button>
+				</a>
 			{/if}
-
-			<button class="btn btn-success w-full my-4">
-				<div class="font-bold text-lg">
-					<a href="/my/settings">Settings</a>
-				</div>
-			</button>
+			<a href="/my/settings">
+				<button class="btn btn-success w-full my-4">
+					<div class="font-bold text-lg">Settings</div>
+				</button>
+			</a>
 		</div>
 	</div>
 {/if}

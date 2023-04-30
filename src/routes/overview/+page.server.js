@@ -10,16 +10,10 @@ export async function load({ locals }) {
         expand: 'ratings(act)'
       }));
 
-      // console.log(fullList[1].expand['ratings(act)'][0])
-
       fullList.forEach(act => {
         var ratingList = act.expand['ratings(act)']
         if (ratingList) {
-          console.log(ratingList)
           for (var rating of ratingList) {
-            // console.log("Rating: " + rating)
-            // console.log("User: " + rating.user)
-            // console.log("User 2: " + locals.user.id)
             if (rating.user == locals.user.id) {
               act.rating_drink = rating.rating_drink;
               act.rating_act = rating.rating_act;
@@ -27,7 +21,6 @@ export async function load({ locals }) {
           }
         }
       })
-      // console.log(fullList)
       return fullList
     } catch (err) {
       console.log(err)

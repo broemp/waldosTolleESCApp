@@ -8,10 +8,6 @@
 	export let actValue = data.rating?.rating_act === undefined ? 5 : data.rating.rating_act;
 	export let drinkValue = data.rating?.rating_drink === undefined ? 5 : data.rating.rating_drink;
 
-	console.log('Data: ' + data);
-	console.log('Act: ' + actValue);
-	console.log('Drink: ' + drinkValue);
-
 	let loading = false;
 
 	const submitLogin = () => {

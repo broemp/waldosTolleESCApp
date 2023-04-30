@@ -1,5 +1,6 @@
 backend/pb_data
 backend/pb_migrations
+.svelte-kit
 .DS_Store
 node_modules
 web/build
@@ -10,3 +11,4 @@ web/package
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+build

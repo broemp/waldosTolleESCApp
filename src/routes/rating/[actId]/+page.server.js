@@ -57,7 +57,6 @@ export const actions = {
     // Try to Update Record
     if (record != undefined) {
       try {
-        console.log("Update")
 
         await locals.pb.collection('ratings').update(record.id, formData)
       } catch (err) {
@@ -66,7 +65,6 @@ export const actions = {
       }
     } else {
       // Create new Record
-      console.log("Create")
       try {
         await locals.pb.collection('ratings').create(formData)
 

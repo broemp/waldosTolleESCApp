@@ -1,12 +1,11 @@
 FROM node:20 as build
 
-ENV NODE_ENV=production 
 
 RUN npm install -g pnpm
 WORKDIR /app
 
 COPY .npmrc package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile
 COPY . ./
 RUN pnpm run build
 
