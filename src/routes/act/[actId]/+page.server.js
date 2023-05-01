@@ -52,8 +52,6 @@ export const load = ({ locals, params }) => {
     return rating_drink / ratings.length
   })
 
-  ratings.then(ratings => { console.log(ratings[0]) })
-
   return {
     act: getAct(params.actId),
     rating_act: rating_act,

@@ -54,7 +54,7 @@
 	{#each data.ratings as card}
 		<div class="mx-2 mb-2">
 			<RatingCardUser
-				username={card.expand.user.username}
+				username={card.expand?.user?.username}
 				rating_act={card.rating_act}
 				rating_drink={card.rating_drink}
 			/>
