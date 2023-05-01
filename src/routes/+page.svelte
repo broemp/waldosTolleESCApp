@@ -28,38 +28,31 @@
 </script>
 
 {#if !data.user}
-	<div class="flex flex-col justify-center w-screen">
-		<h2 class="text-center text-3xl font-bold tracking-tight text-base-content">
-			Willkommen zum Eurovision Song Contest 2023
-		</h2>
-		<div class="bg-green-500 border border-green-500 mt-2 mx-20" />
-		<form
-			action="?/login"
-			method="POST"
-			class="flex flex-col items-center space-y-2 w-full py-2 pt-4"
-			use:enhance={submitLogin}
-		>
-			<div class="form-control w-full py-2 max-w-md">
-				<label for="name" class="label font-medium pb-1">
-					<span class="label-text">Username</span>
-				</label>
-				<input type="text" name="username" class="input input-bordered mx-2" disabled={loading} />
-			</div>
+	<h2 class="text-center text-3xl font-bold tracking-tight text-base-content">
+		Willkommen zum Eurovision Song Contest 2023
+	</h2>
+	<div class="bg-primary border border-primary" />
+	<form
+		action="?/login"
+		method="POST"
+		class="flex flex-col items-center space-y-2 w-full py-2 pt-4"
+		use:enhance={submitLogin}
+	>
+		<div class="form-control w-full py-2 max-w-md">
+			<label for="name" class="label font-medium pb-1">
+				<span class="label-text">Username</span>
+			</label>
+			<input type="text" name="username" class="input input-bordered mx-2" disabled={loading} />
+		</div>
 
-			<div class="form-control w-full py-2 max-w-md">
-				<label for="password" class="label font-medium pb-1">
-					<span class="label-text">Password</span>
-				</label>
-				<input
-					type="password"
-					name="password"
-					class="input input-bordered mx-2"
-					disabled={loading}
-				/>
-			</div>
-			<button type="submit" class="btn btn-secondary w-5/6" disabled={loading}>Login</button>
-		</form>
-	</div>
+		<div class="form-control w-full py-2 max-w-md">
+			<label for="password" class="label font-medium pb-1">
+				<span class="label-text">Password</span>
+			</label>
+			<input type="password" name="password" class="input input-bordered mx-2" disabled={loading} />
+		</div>
+		<button type="submit" class="btn btn-secondary w-5/6" disabled={loading}>Login</button>
+	</form>
 	<footer>
 		<div class="flex justify-center">
 			<a href="/register" class="text-secondary font-medium hover:cursor-pointer hover:underline">

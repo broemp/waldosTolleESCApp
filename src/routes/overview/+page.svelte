@@ -31,7 +31,7 @@
 								{act.drink_name}
 								<br />
 							</p>
-							<div class="flex">
+							<div class="flex items-center">
 								<svg
 									width="30px"
 									height="30px"
@@ -53,7 +53,7 @@
 									{/if}
 								</p>
 							</div>
-							<div class="flex">
+							<div class="flex items-center">
 								<svg
 									width="30px"
 									height="30px"
@@ -80,7 +80,7 @@
 										fill="#33363F"
 									/>
 								</svg>
-								<p class="font-bold">
+								<p class="font-bold pt-1">
 									{#if act.rating_drink}
 										{act.rating_drink}
 									{:else}

@@ -4,7 +4,7 @@
 	export let rating_drink;
 </script>
 
-<div class="card w-96 bg-secondary shadow-xl m-2">
+<div class="card bg-secondary shadow-xl">
 	<div class="card-body">
 		<h2 class="card-title">{username}</h2>
 		<div class="flex justify-between">
