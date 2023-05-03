@@ -4,7 +4,7 @@ const config = {
 	theme: {
 		extend: {},
 		fontFamily: {
-			'sans': ['Roboto', 'sans-serif'],
+			'sans': ['Figtree', 'sans-serif'],
 		}
 	},
 
@@ -13,13 +13,14 @@ const config = {
 	daisyui: {
 		themes: [
 			{
-				synthwave: {
+				esc: {
 					"base-100": "#05025E",
 					"base-200": "#040241",
 					"primary": "#FF0087",
 					"secondary": "#2EFD79",
 					"base-content": "#FFFFFF",
 					"neutral-content": "#FFFFFF",
+					"background": "#02025e",
 				},
 			},
 			"dark",

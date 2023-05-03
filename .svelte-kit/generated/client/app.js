@@ -13,12 +13,10 @@ export const nodes = [
 	() => import('./nodes/9'),
 	() => import('./nodes/10'),
 	() => import('./nodes/11'),
-	() => import('./nodes/12'),
-	() => import('./nodes/13'),
-	() => import('./nodes/14')
+	() => import('./nodes/12')
 ];
 
-export const server_loads = [0,2];
+export const server_loads = [0];
 
 export const dictionary = {
 		"/": [~3],
@@ -26,13 +24,11 @@ export const dictionary = {
 		"/act/[actId]": [~4],
 		"/admin": [~6],
 		"/login/admin": [~7],
-		"/my/ratings": [8],
-		"/my/settings/account": [~9,[2]],
-		"/my/settings/profile": [~10,[2]],
-		"/my/settings/security": [11,[2]],
-		"/overview": [~12],
-		"/rating/[actId]": [~13],
-		"/register": [~14]
+		"/my/settings": [~8],
+		"/my/votes": [9,[2]],
+		"/overview": [~10],
+		"/rating/[actId]": [~11],
+		"/register": [~12]
 	};
 
 export const hooks = {

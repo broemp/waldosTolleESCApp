@@ -50,9 +50,10 @@
 			<div class="box bg-pink-500 px-3 m-2">
 				<h3 class="text-md font-bold">Wie fandest du den Auftritt und den Drink?</h3>
 			</div>
-			<h2 class="text-xl font-bold text-accent-focus">
+			<h2 class="text-xl font-bold">
 				{act.act_number}. {act.country}
 			</h2>
+			<div class="divider" />
 			<div class="text-center font-bold text-sm">
 				<p>
 					Song: {act.song_name}
@@ -65,10 +66,10 @@
 			</div>
 			<div class="flex">
 				<a href="/act/{act.id}">
-					<button class="btn btn-outline btn-primary mr-4" type="button">Mehr Infos</button>
+					<button class="btn btn-outline btn-secondary mr-4" type="button">Mehr Infos</button>
 				</a>
 				<a href="/overview">
-					<button class="btn btn-outline btn-primary" type="button">Overview</button>
+					<button class="btn btn-outline btn-secondary" type="button">Overview</button>
 				</a>
 			</div>
 			<div class="divider" />
@@ -81,7 +82,7 @@
 			/>
 			<div class="divider" />
 			<Rating
-				name="rating_drink"
+				name="rating_drink"data.isAdmi
 				label="Bewerte den Drink!"
 				id="rating_drink"
 				required="true"

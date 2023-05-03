@@ -37,7 +37,7 @@ export const load = ({ locals, params }) => {
     ratings.forEach(rating => {
       rating_act = rating.rating_act + rating_act;
     })
-    return rating_act / ratings.length
+    return (rating_act / ratings.length).toFixed(2)
   })
 
   const rating_drink = ratings.then(ratings => {
@@ -49,7 +49,7 @@ export const load = ({ locals, params }) => {
     ratings.forEach(rating => {
       rating_drink += rating.rating_drink;
     })
-    return rating_drink / ratings.length
+    return (rating_drink / ratings.length).toFixed(2)
   })
 
   return {

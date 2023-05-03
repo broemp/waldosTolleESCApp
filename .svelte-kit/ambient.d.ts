@@ -128,6 +128,7 @@ declare module '$env/static/private' {
  */
 declare module '$env/static/public' {
 	export const PUBLIC_POCKETBASE_URL: string;
+	export const PUBLIC_PAYPAL_URL: string;
 }
 
 /**
@@ -251,6 +252,7 @@ declare module '$env/dynamic/private' {
 declare module '$env/dynamic/public' {
 	export const env: {
 		PUBLIC_POCKETBASE_URL: string;
+		PUBLIC_PAYPAL_URL: string;
 		[key: `PUBLIC_${string}`]: string | undefined;
 	}
 }

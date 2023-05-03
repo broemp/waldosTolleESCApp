@@ -7,7 +7,7 @@
 	export let required = false;
 </script>
 
-<p class="mt-2  text-xl underline decoration-green-500 decoration-2">{label}</p>
+<p class="mt-2 text-xl underline decoration-green-500 decoration-2">{label}</p>
 <input
 	{label}
 	{name}
