@@ -32,5 +32,3 @@ export async function load({ locals }) {
     acts: getActs(),
   }
 }
-
-//TODO Add function to show who was already voted on

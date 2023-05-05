@@ -1,6 +1,5 @@
 <script>
 	import '../app.postcss';
-	import { getImageURL } from '$lib/utils';
 	import { Toaster } from 'svelte-french-toast';
 	export let data;
 </script>

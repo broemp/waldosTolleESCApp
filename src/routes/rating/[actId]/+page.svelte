@@ -82,7 +82,7 @@
 			/>
 			<div class="divider" />
 			<Rating
-				name="rating_drink"data.isAdmi
+				name="rating_drink"
 				label="Bewerte den Drink!"
 				id="rating_drink"
 				required="true"

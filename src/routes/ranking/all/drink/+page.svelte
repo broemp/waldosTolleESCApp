@@ -1,0 +1,26 @@
+<script>
+	import RankingTabs from '$lib/components/RankingTabs.svelte';
+	import RatingCardList from '$lib/components/RatingCardList.svelte';
+
+	export let data;
+
+	function compare(a, b) {
+		if (a.rating_drink > b.rating_drink) {
+			return -1;
+		}
+		if (a.rating_drink < b.rating_drink) {
+			return 1;
+		}
+		return 0;
+	}
+
+	let acts = data.acts.sort(compare);
+</script>
+
+<RankingTabs active="drink" />
+
+{#each acts as act, i (i)}
+	<div class="m-2">
+		<RatingCardList country={act.country} value={act.rating_drink} position={i + 1} />
+	</div>
+{/each}

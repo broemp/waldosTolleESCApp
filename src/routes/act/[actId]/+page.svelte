@@ -17,8 +17,13 @@
 				/>
 			</div>
 		</figure>
-		<div class="card-body">
-			<h2 class="card-title">{data.act.country}</h2>
+		<div class="card-body text-black">
+			<div class="card-title justify-between">
+				<h2>{data.act.country}</h2>
+				<a href="/rating/{data.act.id}">
+					<button class="btn bg-primary">Vote!</button>
+				</a>
+			</div>
 			<div class="flex justify-between">
 				<div class="class">
 					<p class="text-md font-bold">
@@ -47,7 +52,7 @@
 </div>
 
 <div class="bg-secondary py-2 m-2 rounded-lg">
-	<span class="text-center text-2xl font-bold underline">
+	<span class="text-center text-2xl font-bold underline text-black">
 		<h2>ALLE VOTES!</h2>
 	</span>
 </div>

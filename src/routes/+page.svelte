@@ -99,29 +99,24 @@
 					<div class="font-bold text-lg">Running Order</div>
 				</button>
 			</a>
-			<a href="/my/votes">
+			<a href="/ranking/my/overall">
 				<button class="btn btn-secondary w-full my-4">
 					<div class="font-bold text-lg">Meine Votes</div>
 				</button>
 			</a>
-			<a href="/rating/new">
+			<a href="/ranking/all/overall">
 				<button class="btn btn-secondary w-full my-4">
-					<div class="font-bold text-lg">Zum Voting</div>
+					<div class="font-bold text-lg">Alle Votes</div>
 				</button>
 			</a>
 			{#if data.isAdmin}
-				<a href="/admin">
-					<button class="btn btn-primary w-full my-4">
-						<div class="font-bold text-lg">Admin</div>
-					</button>
-				</a>
 				<a href="/act/new">
 					<button class="btn btn-primary w-full my-4">
 						<div class="font-bold text-lg">Add Act</div>
 					</button>
 				</a>
 			{/if}
-			<a href="/my/settings">
+			<a href="/settings">
 				<button class="btn btn-secondary w-full my-4">
 					<div class="font-bold text-lg">Settings</div>
 				</button>
