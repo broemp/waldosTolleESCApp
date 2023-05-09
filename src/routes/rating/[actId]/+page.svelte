@@ -2,6 +2,7 @@
 	import { Rating } from '$lib/components';
 	import { enhance } from '$app/forms';
 	import toast from 'svelte-french-toast';
+	import { redirect } from '@sveltejs/kit';
 
 	export let data;
 	export let act = data.act;
@@ -23,12 +24,6 @@
 					break;
 				case 'error':
 					toast.error(result.error.message, { position: 'bottom-center' });
-					await update();
-					break;
-				case 'redirect':
-					toast.success('Voting wurde gespeichert!', {
-						position: 'bottom-center'
-					});
 					await update();
 					break;
 				default:

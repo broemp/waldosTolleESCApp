@@ -78,8 +78,6 @@ export const actions = {
       }
     }
 
-
-    //TODO schöner machen
-    throw redirect(303, '/rating/' + params.actId)
+    throw redirect(303, '/overview')
   }
 }
