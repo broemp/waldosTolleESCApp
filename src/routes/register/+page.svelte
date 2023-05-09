@@ -7,8 +7,10 @@
 		Registrier dich für den Eurovision Song & Drink Contest 2023
 	</h2>
 	<p class="text-center mt-1">
-		Or <a href="/" class="text-primary font-medium hover:cursor-pointer hover:underline">sign in</a>
-		if you already have an account.
+		Oder <a href="/" class="text-primary font-medium hover:cursor-pointer hover:underline"
+			>einloggen</a
+		>
+		wenn du schon einen account hast.
 	</p>
 	<form action="?/register" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
 		<div class="form-control w-full max-w-md">
@@ -16,12 +18,6 @@
 				<span class="label-text">Username</span>
 			</label>
 			<input type="text" name="username" class="input input-bordered w-full max-w-md" />
-		</div>
-		<div class="form-control w-full max-w-md">
-			<label for="email" class="label font-medium pb-1">
-				<span class="label-text">Email (optional)</span>
-			</label>
-			<input type="email" name="email" class="input input-bordered w-full max-w-md" />
 		</div>
 		<div class="form-control w-full max-w-md">
 			<label for="password" class="label font-medium pb-1">
