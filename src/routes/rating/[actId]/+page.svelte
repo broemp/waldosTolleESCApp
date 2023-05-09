@@ -43,22 +43,31 @@
 			use:enhance={submitLogin}
 		>
 			<div class="box bg-pink-500 px-3 m-2">
-				<h3 class="text-md font-bold">Wie fandest du den Auftritt und den Drink?</h3>
+				<h3 class="text-md font-bold text-center">Wie fandest du den Auftritt und den Drink?</h3>
 			</div>
-			<h2 class="text-xl font-bold">
+			<h2 class="text-xl font-bold flex justify-center">
 				{act.act_number}. {act.country}
+				<img
+					src="https://eurovision.tv/sites/default/files/{act.country_code}.svg"
+					width="30"
+					alt="Country Flag"
+					class="ml-5"
+				/>
 			</h2>
 			<div class="divider" />
-			<div class="text-center font-bold text-sm">
-				<p>
-					Song: {act.song_name}
-					<br />
-					Künstler: {act.artist}
-					<br />
-					Drink:
-					{act.drink_name}
-				</p>
+			<div class="flex justify-center">
+				<div class="text-center font-bold text-sm">
+					<p>
+						Song: {act.song_name}
+						<br />
+						Künstler: {act.artist}
+						<br />
+						Drink:
+						{act.drink_name}
+					</p>
+				</div>
 			</div>
+
 			<div class="flex">
 				<a href="/act/{act.id}">
 					<button class="btn btn-outline btn-secondary mr-4" type="button">Mehr Infos</button>

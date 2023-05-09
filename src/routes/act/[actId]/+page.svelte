@@ -3,17 +3,17 @@
 	import RatingCardUser from '$lib/components/RatingCardUser.svelte';
 	import { getImageURL } from '$lib/utils';
 	export let data;
+	console.log(data.act?.song_image);
 </script>
 
 <div class="flex justify-center">
 	<div class="card card-compact m-2 w-full bg-secondary shadow-xl">
 		<figure>
-			<div class="flex justify-center w-full aspect-video">
+			<div class="flex justify-center w-full">
 				<img
-					src={data.act?.song_image
-						? getImageURL(data.act?.collectionId, data.act?.id, data.act?.song_image)
-						: ''}
+					src={data.act?.song_image ? data.act?.song_image : 'https://picsum.photos/500/300'}
 					alt="act"
+					class="object-cover max-h-50"
 				/>
 			</div>
 		</figure>
