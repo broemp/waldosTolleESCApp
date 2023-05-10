@@ -99,16 +99,18 @@
 					<div class="font-bold text-lg">Running Order</div>
 				</button>
 			</a>
-			<a href="/ranking/my/overall">
-				<button class="btn btn-secondary w-full my-4">
-					<div class="font-bold text-lg">Meine Votes</div>
-				</button>
-			</a>
-			<a href="/ranking/all/overall">
-				<button class="btn btn-secondary w-full my-4">
-					<div class="font-bold text-lg">Alle Votes</div>
-				</button>
-			</a>
+			<div class="flex w-full">
+				<a href="/ranking/my/overall">
+					<button class="btn btn-secondary w-full my-4">
+						<div class="font-bold text-lg">Meine Votes</div>
+					</button>
+				</a>
+				<a href="/ranking/all/overall">
+					<button class="btn btn-secondary w-full my-4">
+						<div class="font-bold text-lg">Alle Votes</div>
+					</button>
+				</a>
+			</div>
 			{#if data.isAdmin}
 				<a href="/act/new">
 					<button class="btn btn-primary w-full my-4">

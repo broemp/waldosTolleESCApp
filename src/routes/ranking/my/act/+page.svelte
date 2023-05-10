@@ -20,7 +20,9 @@
 <RankingTabs active="act" my="true" />
 
 {#each acts as act, i (i)}
-	<div class="m-2">
-		<RatingCardList country={act.country} value={act.rating_act} position={i + 1} />
-	</div>
+	<a href="/act/{act.id}">
+		<div class="m-2">
+			<RatingCardList country={act.country} value={act.rating_act} position={i + 1} />
+		</div>
+	</a>
 {/each}
