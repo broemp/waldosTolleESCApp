@@ -92,21 +92,21 @@
 				</a>
 			</div>
 			<div class="mt-8 flex justify-center">
-				<p class="font-bold text-lg">WOHIN MÖCHTEST DU?</p>
+				<p class="font-bold text-lg underline decoration-secondary">WOHIN MÖCHTEST DU?</p>
 			</div>
 			<a href="/overview">
 				<button class="btn btn-secondary w-full my-4 mt-10">
 					<div class="font-bold text-lg">Running Order</div>
 				</button>
 			</a>
-			<div class="flex w-full">
+			<div class="flex justify-center w-full">
 				<a href="/ranking/my/overall">
-					<button class="btn btn-secondary w-full my-4">
+					<button class="btn btn-secondary my-4 mr-1">
 						<div class="font-bold text-lg">Meine Votes</div>
 					</button>
 				</a>
 				<a href="/ranking/all/overall">
-					<button class="btn btn-secondary w-full my-4">
+					<button class="btn btn-secondary my-4 ml-1">
 						<div class="font-bold text-lg">Alle Votes</div>
 					</button>
 				</a>
