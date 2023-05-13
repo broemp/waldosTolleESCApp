@@ -1,0 +1,234 @@
+[
+  {
+    "id": "w1bg3asovn4l1ob",
+    "name": "ratings",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "lcufxgkv",
+        "name": "user",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "options": {
+          "collectionId": "_pb_users_auth_",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": []
+        }
+      },
+      {
+        "id": "vuxq0mhq",
+        "name": "act",
+        "type": "relation",
+        "system": false,
+        "required": true,
+        "options": {
+          "collectionId": "hjgg2yb0him6kwt",
+          "cascadeDelete": true,
+          "minSelect": null,
+          "maxSelect": 1,
+          "displayFields": [
+            "country"
+          ]
+        }
+      },
+      {
+        "id": "bmchjphu",
+        "name": "rating_act",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "options": {
+          "min": 1,
+          "max": 10
+        }
+      },
+      {
+        "id": "9mrasxbq",
+        "name": "rating_drink",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "options": {
+          "min": 0,
+          "max": 10
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "@request.auth.id != \"\" && @request.auth.id = @request.data.user.id",
+    "updateRule": "@request.auth.id = user",
+    "deleteRule": "@request.auth.id = user",
+    "options": {}
+  },
+  {
+    "id": "hjgg2yb0him6kwt",
+    "name": "acts",
+    "type": "base",
+    "system": false,
+    "schema": [
+      {
+        "id": "emzc2ixk",
+        "name": "country",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "5mvxxvob",
+        "name": "artist",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "wylui0he",
+        "name": "song_name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "nkrekueb",
+        "name": "drink_name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "ghe9gvul",
+        "name": "act_number",
+        "type": "number",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null
+        }
+      },
+      {
+        "id": "nh1pl5bd",
+        "name": "country_code",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": 1,
+          "max": 3,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "k09uki0p",
+        "name": "drink_description",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "bki5g5rp",
+        "name": "song_image",
+        "type": "url",
+        "system": false,
+        "required": false,
+        "options": {
+          "exceptDomains": [],
+          "onlyDomains": []
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "@request.auth.id != \"\" && @request.auth.id = @request.data.user.id && @request.data.user.admin = true",
+    "updateRule": "@request.auth.id != \"\" && @request.auth.id = @request.data.user.id && @request.auth.admin = true",
+    "deleteRule": "@request.auth.id != \"\" && @request.auth.id = @request.data.user.id && @request.auth.admin = true",
+    "options": {}
+  },
+  {
+    "id": "_pb_users_auth_",
+    "name": "users",
+    "type": "auth",
+    "system": false,
+    "schema": [
+      {
+        "id": "users_name",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "users_avatar",
+        "name": "avatar",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [
+            "image/jpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/gif",
+            "image/webp"
+          ],
+          "thumbs": null,
+          "protected": false
+        }
+      }
+    ],
+    "indexes": [],
+    "listRule": "",
+    "viewRule": "",
+    "createRule": "",
+    "updateRule": "id = @request.auth.id",
+    "deleteRule": "id = @request.auth.id",
+    "options": {
+      "allowEmailAuth": true,
+      "allowOAuth2Auth": true,
+      "allowUsernameAuth": true,
+      "exceptEmailDomains": null,
+      "manageRule": null,
+      "minPasswordLength": 5,
+      "onlyEmailDomains": null,
+      "requireEmail": false
+    }
+  }
+]
