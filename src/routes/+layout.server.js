@@ -9,7 +9,7 @@ export const load = ({ locals }) => {
             try {
                 const anime = serializeNonPOJOs(await locals.pb.collection('users').getFirstListItem('id ="' + locals.user.id + '"',))
                 // console.log(anime["anime_mode"])
-                return anime["anime_mode"]
+                return [anime["anime_mode"], anime["nsfw_mode"]]
             } catch (err) {
                 console.log(err)
                 throw error(err.status, err.message)
@@ -19,7 +19,7 @@ export const load = ({ locals }) => {
         return {
             user: locals.user,
             isAdmin: isAdmin(locals),
-            animeMode: getAnimeMode(locals),
+            animeMode: getAnimeMode(),
         }
     }
 

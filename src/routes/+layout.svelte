@@ -7,8 +7,19 @@
 	var bg_image = '';
 
 	onMount(async () => {
-		if (data.animeMode) {
-			let response = await fetch('https://api.waifu.pics/sfw/waifu');
+		console.log(data.animeMode);
+		if (data.animeMode[0]) {
+			let response;
+			switch (data.animeMode[1]) {
+				case false:
+					console.log(data.animeMode[1]);
+					response = await fetch('https://api.waifu.pics/sfw/waifu');
+					break;
+				case true:
+					response = await fetch('https://api.waifu.pics/nsfw/waifu');
+					console.log(data.animeMode[1]);
+					break;
+			}
 			let url = await response.json();
 			// console.log(url.url);
 			bg_image = url.url;
